@@ -69,7 +69,7 @@ public class Sorts{
     public void mergeSort(ArrayList <Integer> list){
         //replace these lines with your code
         System.out.println();
-        System.out.println("Insertion Sort");
+        System.out.println("Merge Sort");
         System.out.println();
     }
     

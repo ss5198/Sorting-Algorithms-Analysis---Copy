@@ -47,6 +47,41 @@ public class Sorts{
         System.out.println();
         System.out.println("Selection Sort");
         System.out.println();
+        
+        ArrayList <Integer> newList = new ArrayList<Integer>();
+        boolean done = false;
+        while (!done){
+            while(list.size() > 0){
+                list.remove(0);
+            }
+            for (int i=0; i < list.size(); i++){
+                int x = list.get(i);
+                if (i == 0){
+                    newList.add(x);
+                }
+                else{
+                    for(int ii=0; ii < list.size(); ii++){
+                        if (x < newList.get(0)){
+                            newList.add(0, x);
+                        }
+                        //else if (x > newList.get(0)){
+                        else{
+                            newList.add(list.size(), x);
+                        }               
+                    
+                    }
+                }
+            }
+            list = newList;
+            
+            for (int y = 1; y < list.size()-1; y++){
+                if (y < list.get(y+1) && y > list.get(y-1)){
+                    continue;
+                }
+                done = true;
+            }
+        }
+        
     }
 
     /**
@@ -59,6 +94,29 @@ public class Sorts{
         System.out.println();
         System.out.println("Insertion Sort");
         System.out.println();
+        
+        
+        boolean done = false;
+        while (!done){
+            for (int i=0; i < list.size(); i++){
+                int x = list.get(i);
+                if (i == 0){
+                    
+                }
+                else{
+                    
+                }
+            }
+            
+            for (int y = 1; y < list.size()-1; y++){
+                if (y < list.get(y+1) && y > list.get(y-1)){
+                    continue;
+                }
+                done = true;
+            }
+        }
+        
+        
     }
 
      /**
@@ -71,6 +129,54 @@ public class Sorts{
         System.out.println();
         System.out.println("Merge Sort");
         System.out.println();
+        
+        int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE, range, distance = Integer.MAX_VALUE, newDistance = 0, trans = 0, l = list.size();
+        ArrayList <Integer> newList = new ArrayList<Integer>();
+        ArrayList <Integer> update = new ArrayList<Integer>();
+        boolean done = false;
+        
+        
+            
+                
+        for (int i=0; i < list.size(); i++){
+            if (list.get(i) > max){
+                max = list.get(i);
+            }
+            else if (list.get(i) < min){
+                min = list.get(i);
+            }
+        }
+         
+        
+        while (!done){
+        
+            for (int i=0; i < list.size()/2; i++){
+                newList.add(list.get(i));
+                list.remove(i);
+            }
+        
+            for (int i = 0; i < l; i++){
+                if (list.get(0) <= newList.get(0)){
+                    update.add(list.get(0));
+                    list.remove(0);
+                }
+                else if (list.get(0) > newList.get(0)){
+                    update.add(newList.get(0));
+                    newList.remove(0);
+                }
+            }
+            
+            list = update;
+                
+            for (int y = 1; y < list.size()-1; y++){
+                if (y < list.get(y+1) && y > list.get(y-1)){
+                    continue;
+                }
+                done = true;
+            }
+        }
+        
+        
     }
     
     /**
